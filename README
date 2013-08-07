@@ -1,0 +1,7 @@
+Update /etc/postfix/main.cf like as below
+
+..
+relayhost = 192.168.4.187
+...
+
+
