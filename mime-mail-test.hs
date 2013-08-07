@@ -19,7 +19,7 @@ simpleMail from tos ccs bccs subject textBody htmlBody attachments = do
               , mailTo = map (Address Nothing) tos
               , mailCc = map (Address Nothing) ccs
               , mailBcc = map (Address Nothing) bccs
-              , mailHeaders = [ ("Subejct", subject) ]
+              , mailHeaders = [ ("Subject", subject) ]
               , mailParts = [ Part "text/plain; charset=utf-8" QuotedPrintableText Nothing [] $ LT.encodeUtf8 textBody
                             , Part "text/html; charset=utf-8" QuotedPrintableText Nothing [] $ LT.encodeUtf8 htmlBody
                             ]
@@ -31,9 +31,7 @@ testMail = simpleMail
            "cutsea110@gmail.com" 
            []
            []
-           [ "cutsea110@mss.basement.timedia.co.jp"
-           , "kiwada@mss.basement.timedia.co.jp"
-           , "komiyama@mss.basement.timedia.co.jp"
+           [ "cutsea110@gmail.com"
            ]
            "全部BCCで投げてみた"
            "journalに対するテストを兼ねてる."
